@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coastal Plants Nursery &amp; Coffee Shop · The Farm Shop Kitchen, Mossel Bay</title>
+<meta name="description" content="An indigenous plant nursery with a coffee shop in the garden, at 7 Station Street, Mossel Bay. Breakfasts, carrot cake, high teas, garden pots and a bulk refill pantry.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M8 64V30a24 24 0 0 1 48 0v34z' fill='%2324407F'/%3E%3Cpath d='M32 52c0-14 4-22 12-28-10 2-14 8-12 16-2-8-6-12-14-14 8 6 14 14 14 26z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --delft:#24407F; --delft-deep:#172C5C; --delft-pale:#DCE3F2;
+  --leaf:#2F5D3A; --leaf-deep:#1D3B25; --sage:#C9D8C3;
+  --blush:#F3D9D1; --blush-deep:#E7B9AC;
+  --chalk:#FBFAF6; --white:#FFFFFF;
+  --sun:#E9B949;
+  --ink:#17261D; --ink-2:#4B5A50;
+  --serif:"Young Serif", Georgia, serif;
+  --sans:"Figtree", system-ui, sans-serif;
+  --hand:"Caveat", "Comic Sans MS", cursive;
+  --wrap:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-size:1.0625rem;line-height:1.65;color:var(--ink);background:var(--chalk);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--delft);outline-offset:3px;border-radius:4px}
+.wrap{width:min(var(--wrap),100% - 2.5rem);margin-inline:auto}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(2.4rem,4.8vw,4rem)}
+h3{font-size:1.6rem;line-height:1.15}
+p{max-width:60ch}
+.lede{font-size:clamp(1.15rem,1.5vw,1.3rem);line-height:1.6;color:var(--ink-2);max-width:42ch}
+.hand{font-family:var(--hand);font-weight:700;line-height:1}
+
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:1.02rem;text-decoration:none;padding:.85rem 1.45rem;border-radius:999px;background:var(--leaf);color:var(--white);border:2px solid var(--leaf);transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--leaf-deep);border-color:var(--leaf-deep)}
+.btn.line{background:transparent;color:var(--leaf)}
+.btn.line:hover{background:var(--leaf);color:var(--white)}
+.btn.delft{background:var(--white);color:var(--delft);border-color:var(--white)}
+.btn.delft:hover{background:var(--blush);border-color:var(--blush)}
+
+/* arch */
+.arch{border-radius:999px 999px 14px 14px;overflow:hidden;position:relative;background:var(--sage)}
+.arch img{width:100%;height:100%;object-fit:cover}
+
+/* plant tag */
+.tag{position:absolute;z-index:3;background:var(--white);color:var(--ink);font-family:var(--hand);font-weight:700;font-size:1.45rem;line-height:1.05;padding:.55rem .9rem .55rem 1.75rem;border-radius:4px 14px 14px 4px;box-shadow:0 10px 22px rgba(23,38,29,.16);clip-path:polygon(14px 0,100% 0,100% 100%,14px 100%,0 50%)}
+.tag::before{content:"";position:absolute;left:12px;top:50%;width:7px;height:7px;margin-top:-3.5px;border-radius:50%;background:var(--chalk);box-shadow:inset 0 0 0 1.5px rgba(23,38,29,.25)}
+.tag small{display:block;font-family:var(--sans);font-weight:500;font-size:.72rem;color:var(--ink-2);margin-top:.2rem;letter-spacing:.01em}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:40;background:rgba(251,250,246,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(23,38,29,.08)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;height:76px}
+.brand{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+.brand svg{width:40px;height:40px;flex:none}
+.brand b{font-family:var(--serif);font-weight:400;font-size:1.35rem;line-height:1;display:block;color:var(--leaf-deep)}
+.brand span{font-size:.8rem;color:var(--ink-2);display:block;margin-top:.2rem}
+.nav ul{display:flex;gap:1.9rem;list-style:none;font-weight:500;font-size:.98rem}
+.nav ul a{text-decoration:none;color:var(--ink-2)}
+.nav ul a:hover{color:var(--leaf);text-decoration:underline;text-underline-offset:6px}
+.status{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:600;padding:.45rem .9rem;border-radius:999px;background:var(--sage);color:var(--leaf-deep);white-space:nowrap}
+.status i{width:8px;height:8px;border-radius:50%;background:#3E8E4E;box-shadow:0 0 0 4px rgba(62,142,78,.2)}
+.status.closed{background:var(--blush);color:#7C3B2C}
+.status.closed i{background:#B4533F;box-shadow:0 0 0 4px rgba(180,83,63,.18)}
+
+/* hero */
+.hero{padding:clamp(2.5rem,5vw,4.5rem) 0 clamp(4rem,7vw,6rem);position:relative}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.08fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.hero h1{font-size:clamp(3rem,6.4vw,5.9rem);color:var(--leaf-deep);margin-bottom:1.5rem}
+.hero h1 em{font-style:normal;color:var(--delft)}
+.hero .lede{margin-bottom:2rem}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2.5rem}
+.hero .meta{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:1.5rem;border-top:1px solid rgba(23,38,29,.12)}
+.hero .meta div{font-size:.95rem;color:var(--ink-2)}
+.hero .meta b{display:block;font-family:var(--serif);font-weight:400;font-size:1.6rem;color:var(--ink);line-height:1.1}
+.arches{position:relative;display:grid;grid-template-columns:1fr 1.25fr 1fr;gap:1rem;align-items:end;height:min(640px,62vw)}
+.arches .a1{height:74%}
+.arches .a2{height:100%}
+.arches .a3{height:60%}
+.arches .t1{left:-1.25rem;top:14%;transform:rotate(-6deg)}
+.arches .t2{right:-.5rem;top:30%;transform:rotate(5deg)}
+.arches .t3{left:34%;bottom:-1.1rem;transform:rotate(-2deg)}
+.sprig{position:absolute;right:-3rem;top:-2rem;width:150px;color:var(--leaf);opacity:.9;z-index:-1}
+@media (prefers-reduced-motion:no-preference){
+  .arches .arch{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  .arches .a2{animation-delay:.1s}
+  .arches .a3{animation-delay:.2s}
+  .arches .tag{animation:swing 1s .75s cubic-bezier(.3,1.5,.5,1) both;transform-origin:left center}
+  .arches .t2{animation-delay:.9s}.arches .t3{animation-delay:1.05s}
+  @keyframes rise{from{clip-path:inset(100% 0 0 0 round 999px 999px 14px 14px)}to{clip-path:inset(0 0 0 0 round 999px 999px 14px 14px)}}
+  @keyframes swing{from{opacity:0;translate:0 -14px;rotate:-14deg}to{opacity:1;translate:0 0;rotate:0deg}}
+}
+
+/* delft band */
+.delft{background:var(--delft);color:var(--white);position:relative;overflow:hidden}
+.tiles{height:46px;background-color:var(--delft);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='46' viewBox='0 0 46 46'%3E%3Cg fill='none' stroke='%23DCE3F2' stroke-width='1.6'%3E%3Crect x='1' y='1' width='44' height='44' rx='2' opacity='.35'/%3E%3Cpath d='M23 9c4 6 4 10 0 14-4-4-4-8 0-14zM23 37c4-6 4-10 0-14-4 4-4 8 0 14zM9 23c6-4 10-4 14 0-4 4-8 4-14 0zM37 23c-6-4-10-4-14 0 4 4 8 4 14 0z'/%3E%3Ccircle cx='23' cy='23' r='2.2' fill='%23DCE3F2'/%3E%3Cpath d='M1 8a7 7 0 0 0 7-7M38 1a7 7 0 0 0 7 7M45 38a7 7 0 0 0-7 7M8 45a7 7 0 0 0-7-7' opacity='.7'/%3E%3C/g%3E%3C/svg%3E");background-size:46px 46px}
+.trio{padding:clamp(4.5rem,8vw,7rem) 0}
+.trio .head{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:clamp(2.5rem,5vw,4rem)}
+.trio .head p{color:var(--delft-pale);justify-self:end;max-width:40ch}
+.trio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.25rem,3vw,2.5rem)}
+.door{display:flex;flex-direction:column;text-decoration:none}
+.door .arch{aspect-ratio:3/4;border:6px solid var(--white);background:var(--delft-deep)}
+.door .arch img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.door:hover .arch img{transform:scale(1.05)}
+.door h3{margin:1.4rem 0 .5rem;font-size:1.9rem}
+.door p{color:var(--delft-pale)}
+.door .go{margin-top:1rem;font-weight:600;text-decoration:underline;text-underline-offset:5px;text-decoration-color:rgba(255,255,255,.4)}
+.door:hover .go{text-decoration-color:var(--white)}
+
+/* kitchen */
+.kitchen{padding:clamp(5rem,9vw,8rem) 0;background:var(--blush);position:relative}
+.kitchen .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2.5rem,6vw,5.5rem);align-items:start}
+.kitchen h2{color:var(--leaf-deep);margin-bottom:1rem}
+.kitchen .intro{margin-bottom:2rem;color:#5A4842}
+.tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.75rem}
+.tabs button{font:inherit;font-weight:600;font-size:.98rem;padding:.55rem 1.1rem;border-radius:999px;border:1.5px solid rgba(23,38,29,.2);background:transparent;color:var(--ink);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.tabs button:hover{border-color:var(--leaf)}
+.tabs button[aria-selected="true"]{background:var(--leaf);color:var(--white);border-color:var(--leaf)}
+.menu-list{list-style:none}
+.menu-list li{display:grid;grid-template-columns:64px 1fr;gap:1.1rem;align-items:center;padding:1rem 0;border-bottom:1px solid rgba(23,38,29,.12)}
+.menu-list img{width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid var(--white)}
+.menu-list b{font-family:var(--serif);font-weight:400;font-size:1.3rem;display:block;line-height:1.2}
+.menu-list span{color:#5A4842;font-size:.98rem}
+.panel[hidden]{display:none}
+@media (prefers-reduced-motion:no-preference){.panel:not([hidden]){animation:fade .35s ease both}@keyframes fade{from{opacity:0;transform:translateY(6px)}}}
+.plates{position:relative;height:640px}
+.plate{position:absolute;border-radius:50%;overflow:hidden;border:10px solid var(--white);box-shadow:0 24px 40px rgba(90,40,30,.18)}
+.plate img{width:100%;height:100%;object-fit:cover}
+.plate.p1{width:58%;aspect-ratio:1;right:0;top:0}
+.plate.p2{width:46%;aspect-ratio:1;left:0;top:30%}
+.plate.p3{width:44%;aspect-ratio:1;right:8%;bottom:0}
+.plates .tag{left:44%;top:46%;transform:rotate(-4deg)}
+.cup{position:absolute;left:4%;top:2%;width:28%;aspect-ratio:1;border-radius:50%;overflow:hidden;border:6px solid var(--white);box-shadow:0 14px 24px rgba(90,40,30,.16)}
+.cup img{width:100%;height:100%;object-fit:cover}
+
+/* nursery */
+.nursery{padding:clamp(5rem,9vw,8rem) 0}
+.nursery .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2.5rem,6vw,5.5rem);align-items:center}
+.nursery h2{color:var(--leaf-deep);margin-bottom:1rem}
+.nursery .pics{display:grid;grid-template-columns:1.3fr 1fr;gap:1rem;align-items:end}
+.nursery .pics .arch:first-child{aspect-ratio:3/4.4}
+.nursery .pics .arch:last-child{aspect-ratio:3/4}
+.season-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:2rem 0 1rem;flex-wrap:wrap}
+.season-head p{font-size:.95rem;color:var(--ink-2)}
+.seeds{display:grid;grid-template-columns:repeat(2,1fr);gap:.9rem;list-style:none}
+.seed{background:var(--white);border:1px solid rgba(23,38,29,.1);border-radius:10px;padding:1rem 1.1rem 1rem 1.1rem;display:grid;grid-template-columns:auto 1fr;gap:.2rem .9rem;align-items:start}
+.seed svg{grid-row:span 2;width:34px;height:34px;color:var(--leaf);margin-top:.15rem}
+.seed b{font-family:var(--serif);font-weight:400;font-size:1.15rem;line-height:1.2}
+.seed span{font-size:.92rem;color:var(--ink-2);line-height:1.45}
+.seed i{font-style:normal;font-family:var(--hand);font-size:1.15rem;color:var(--delft);grid-column:2}
+
+/* pantry */
+.pantry{background:var(--leaf-deep);color:var(--white);padding:clamp(5rem,9vw,8rem) 0;overflow:hidden}
+.pantry .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,5.5rem);align-items:center}
+.pantry h2{margin-bottom:1rem}
+.pantry .sub{color:var(--sage);margin-bottom:2.25rem}
+.steps{list-style:none;counter-reset:s;display:grid;gap:0}
+.steps li{counter-increment:s;display:grid;grid-template-columns:3rem 1fr;gap:1rem;padding:1.05rem 0;border-top:1px solid rgba(255,255,255,.14)}
+.steps li:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
+.steps li::before{content:counter(s);font-family:var(--serif);font-size:1.6rem;color:var(--sun);line-height:1.1}
+.steps b{display:block;font-weight:600;font-size:1.1rem}
+.steps span{color:var(--sage);font-size:.98rem}
+.jars{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:1rem}
+.jars img{width:100%;height:100%;object-fit:cover;border-radius:14px}
+.jars .big{grid-column:1/-1;aspect-ratio:4/3;border-radius:999px 999px 14px 14px;overflow:hidden}
+.jars .sm{aspect-ratio:1}
+
+/* gallery */
+.gallery{padding:clamp(5rem,9vw,8rem) 0 clamp(3rem,6vw,5rem)}
+.gallery .top{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.gallery h2{color:var(--leaf-deep)}
+.mosaic{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:170px;gap:.8rem}
+.mosaic figure{overflow:hidden;border-radius:12px;position:relative}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.mosaic figure:hover img{transform:scale(1.04)}
+.mosaic .w2{grid-column:span 2}.mosaic .h2{grid-row:span 2}
+
+/* reviews */
+.reviews{padding:clamp(3rem,6vw,5rem) 0 clamp(5rem,9vw,8rem)}
+.reviews .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2.5rem,6vw,5rem);align-items:start}
+.score{background:var(--delft);color:var(--white);border-radius:999px 999px 18px 18px;padding:4rem 2rem 2.5rem;text-align:center;position:sticky;top:110px}
+.score b{font-family:var(--serif);font-weight:400;font-size:6rem;line-height:1;display:block}
+.stars{display:flex;justify-content:center;gap:.25rem;margin:.75rem 0}
+.stars svg{width:22px;height:22px;fill:var(--sun)}
+.score p{color:var(--delft-pale);margin-inline:auto;font-size:.98rem}
+.quotes{display:grid;gap:1.25rem}
+.quote{background:var(--white);border:1px solid rgba(23,38,29,.08);border-radius:16px;padding:1.75rem 1.9rem}
+.quote p{font-family:var(--serif);font-size:1.4rem;line-height:1.35;color:var(--leaf-deep);margin-bottom:.9rem}
+.quote cite{font-style:normal;font-size:.95rem;color:var(--ink-2)}
+.quote:nth-child(2){margin-left:clamp(0rem,5vw,4rem);background:var(--blush);border-color:transparent}
+.quote:nth-child(4){margin-left:clamp(0rem,5vw,4rem);background:var(--sage);border-color:transparent}
+
+/* visit */
+.visit{background:var(--sage);padding:clamp(5rem,9vw,8rem) 0}
+.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,5rem);align-items:stretch}
+.visit h2{color:var(--leaf-deep);margin-bottom:1.5rem}
+.hours{width:100%;border-collapse:collapse;margin:1.5rem 0 2rem;max-width:440px}
+.hours th,.hours td{text-align:left;padding:.65rem 0;border-bottom:1px solid rgba(23,38,29,.15);font-weight:400}
+.hours td{text-align:right;font-variant-numeric:tabular-nums}
+.hours tr.today th,.hours tr.today td{font-weight:700;color:var(--leaf-deep)}
+.hours tr.today th::after{content:" (today)";font-weight:400;color:var(--ink-2)}
+.contact{display:grid;gap:.4rem;margin-bottom:2rem}
+.contact a{font-weight:600;text-underline-offset:4px;text-decoration-color:rgba(23,38,29,.3)}
+.contact a:hover{color:var(--delft)}
+.mapbox{border-radius:999px 999px 18px 18px;overflow:hidden;min-height:520px;position:relative;background:var(--leaf);border:8px solid var(--white)}
+.mapbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* footer */
+.foot{background:var(--ink);color:var(--sage);padding:3rem 0 2.25rem}
+.foot .wrap{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:end}
+.foot .brand b{color:var(--white)}
+.foot .brand span{color:var(--sage)}
+.foot nav{display:flex;gap:1.5rem;flex-wrap:wrap;font-size:.95rem}
+.foot nav a{text-decoration:none}.foot nav a:hover{color:var(--white)}
+.foot small{display:block;width:100%;font-size:.85rem;opacity:.7;border-top:1px solid rgba(255,255,255,.12);padding-top:1.5rem;margin-top:.5rem}
+
+@media (max-width:1000px){
+  .nav ul{display:none}
+  .hero .wrap,.kitchen .wrap,.nursery .wrap,.pantry .wrap,.reviews .wrap,.visit .wrap{grid-template-columns:1fr}
+  .arches{height:min(520px,90vw)}
+  .trio .head{grid-template-columns:1fr}.trio .head p{justify-self:start}
+  .trio-grid{grid-template-columns:1fr;max-width:440px}
+  .plates{height:min(560px,100vw);max-width:560px;width:100%;margin-inline:auto}
+  .nursery .pics{order:-1}
+  .score{position:static;border-radius:24px;padding:2.5rem 2rem}
+  .mosaic{grid-template-columns:repeat(3,1fr);grid-auto-rows:140px}
+  .mapbox{min-height:400px;border-radius:24px}
+}
+@media (max-width:600px){
+  .wrap{width:calc(100% - 2rem)}
+  .brand span{display:none}
+  .seeds{grid-template-columns:1fr}
+  .mosaic{grid-template-columns:repeat(2,1fr)}
+  .mosaic .w2{grid-column:span 2}
+  .arches{gap:.5rem}
+  .tag{font-size:1.15rem}
+  .arches .t1{left:-.25rem}
+  .arches .t2{right:-.25rem}
+  .hero .meta{gap:1.5rem}
+  .quote p{font-size:1.2rem}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="logo" viewBox="0 0 64 64"><path d="M8 64V30a24 24 0 0 1 48 0v34z" fill="#24407F"/><path d="M32 54c0-14 4-23 12-29-10 2-14 8-12 16-2-8-6-12-14-14 8 6 14 14 14 27z" fill="#fff"/></symbol>
+  <symbol id="leaf" viewBox="0 0 32 32"><path d="M6 26C6 12 14 5 27 5c0 13-7 21-21 21z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 26 20 12" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="flower" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="16" cy="13" r="3"/><path d="M16 10c-2-5 2-7 0-7s2 2 0 7M19 13c5-2 7 2 7 0s-2 2-7 0M13 13c-5-2-7 2-7 0s2 2 7 0M16 16v13M16 24c-3-3-6-3-8-2M16 22c3-3 6-3 8-2"/></g></symbol>
+  <symbol id="succ" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M16 28c-6 0-11-4-11-9 4 0 8 2 11 6 3-4 7-6 11-6 0 5-5 9-11 9z"/><path d="M16 25c-3-4-3-10 0-17 3 7 3 13 0 17z"/></g></symbol>
+  <symbol id="sprout" viewBox="0 0 32 32"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M16 29V14"/><path d="M16 16c0-6-4-9-10-9 0 6 4 9 10 9zM16 14c0-5 4-8 10-8 0 5-4 8-10 8z"/><path d="M8 29h16"/></g></symbol>
+  <symbol id="star" viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7L12 17.3 5.8 21l1.6-7L2 9.2l7.1-.6z"/></symbol>
+</svg>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg aria-hidden="true"><use href="#logo"/></svg><div><b>Coastal Plants</b><span>Nursery, coffee shop &amp; The Farm Shop Kitchen</span></div></a>
+    <nav aria-label="Main"><ul>
+      <li><a href="#kitchen">Coffee shop</a></li>
+      <li><a href="#nursery">Nursery</a></li>
+      <li><a href="#pantry">Farm shop</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul></nav>
+    <span class="status" id="status"><i></i><span>Open today</span></span>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Coffee in the garden, plants to take home.</h1>
+      <p class="lede">A leafy courtyard café inside an indigenous nursery, right in the middle of Mossel Bay. Have breakfast under the vines, then browse the spekboom and pots on your way out.</p>
+      <div class="actions">
+        <a class="btn" href="#kitchen">See the menu</a>
+        <a class="btn line" href="#visit">Find us on Station Street</a>
+      </div>
+      <div class="meta">
+        <div><b>4.8 on Google</b>from 160 reviews</div>
+        <div><b>Indigenous</b>plants and seedlings</div>
+        <div><b>Bulk refills</b>bring your own jar</div>
+      </div>
+    </div>
+    <div class="arches" aria-label="Photos of the garden, veranda and nursery">
+      <svg class="sprig" viewBox="0 0 120 140" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 135C40 90 70 50 112 8"/><path d="M45 88c-12-2-22 4-26 14 12 2 22-4 26-14zM58 70c2-12 12-19 23-19-2 12-12 19-23 19zM74 50c-11-3-21 1-27 10 11 3 21-1 27-10zM86 36c3-11 13-17 23-15-3 11-13 17-23 15z"/></g></svg>
+      <div class="arch a1"><img src="assets/veranda.jpg" alt="The covered veranda with white chairs looking out onto the garden" fetchpriority="high"></div>
+      <div class="arch a2"><img src="assets/garden.jpg" alt="The garden courtyard with lawn, palms, pots and the coffee shop behind"></div>
+      <div class="arch a3"><img src="assets/nursery.jpg" alt="Nursery shelves full of flowering petunias and seedlings" style="object-position:30% 50%"></div>
+      <div class="tag t1">Carrot cake<small>Ask for a slice</small></div>
+      <div class="tag t2">Spekboom<small>Indigenous, waterwise</small></div>
+      <div class="tag t3">Lavender<small>Plant it this winter</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="delft" aria-labelledby="trio-h">
+  <div class="tiles" aria-hidden="true"></div>
+  <div class="trio">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="trio-h">One gate, three ways to spend your morning</h2>
+        <p>Locals come for coffee and leave with a tray of seedlings. Visitors come for the plants and stay for the scones. Most people end up doing all three.</p>
+      </div>
+      <div class="trio-grid">
+        <a class="door" href="#kitchen">
+          <div class="arch"><img src="assets/deck.jpg" alt="Tables on the wooden deck overlooking the garden" loading="lazy"></div>
+          <h3>The coffee shop</h3>
+          <p>Breakfasts, light lunches, high teas and cakes, served inside or out in the garden.</p>
+          <span class="go">See the menu</span>
+        </a>
+        <a class="door" href="#nursery">
+          <div class="arch"><img src="assets/pots.jpg" alt="Shelves of terracotta and glazed garden pots" loading="lazy"></div>
+          <h3>The nursery</h3>
+          <p>A wide range of indigenous plants, edible seedlings and garden pots in every size.</p>
+          <span class="go">What's in season</span>
+        </a>
+        <a class="door" href="#pantry">
+          <div class="arch"><img src="assets/bulk.jpg" alt="Glass jars of brown basmati rice and wholewheat couscous" loading="lazy"></div>
+          <h3>The Farm Shop</h3>
+          <p>Bulk refills, homemade preserves, rusks and the cookies everyone says you have to buy.</p>
+          <span class="go">Browse the pantry</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="tiles" aria-hidden="true"></div>
+</section>
+
+<section class="kitchen" id="kitchen" aria-labelledby="k-h">
+  <div class="wrap">
+    <div>
+      <h2 id="k-h">From The Farm Shop Kitchen</h2>
+      <p class="intro">Everything is made in our kitchen, from the scones to the salad dressing. Coffee comes in blue-and-white china, cake comes in generous slices.</p>
+      <div class="tabs" role="tablist" aria-label="Menu sections">
+        <button role="tab" aria-selected="true" aria-controls="m-bfast" id="t-bfast">Breakfast</button>
+        <button role="tab" aria-selected="false" aria-controls="m-lunch" id="t-lunch" tabindex="-1">Lunch</button>
+        <button role="tab" aria-selected="false" aria-controls="m-cake" id="t-cake" tabindex="-1">Cakes &amp; teas</button>
+        <button role="tab" aria-selected="false" aria-controls="m-drink" id="t-drink" tabindex="-1">Drinks</button>
+      </div>
+      <div class="panel" role="tabpanel" id="m-bfast" aria-labelledby="t-bfast">
+        <ul class="menu-list">
+          <li><img src="assets/breakfast.jpg" alt=""><div><b>Farm breakfast</b><span>Eggs your way, boerewors, grilled tomato, beans and a fresh waffle</span></div></li>
+          <li><img src="assets/rosti.jpg" alt=""><div><b>Rösti with creamed spinach</b><span>Crisp potato rösti, spinach, a poached egg and hollandaise</span></div></li>
+          <li><img src="assets/bowl.jpg" alt=""><div><b>Savoury bowl</b><span>Wholegrains, slow-cooked topping, poached egg and fresh herbs</span></div></li>
+          <li><img src="assets/scones.jpg" alt=""><div><b>Scones with jam and cream</b><span>Baked every morning, served with homemade preserves and grated cheese</span></div></li>
+        </ul>
+      </div>
+      <div class="panel" role="tabpanel" id="m-lunch" aria-labelledby="t-lunch" hidden>
+        <ul class="menu-list">
+          <li><img src="assets/toastie.jpg" alt=""><div><b>Garden toastie</b><span>Toasted on the grill and served with herby roast potato wedges</span></div></li>
+          <li><img src="assets/sandwich.jpg" alt=""><div><b>Open sandwich and salad</b><span>Seeded toast, fried egg and a big leafy salad with edible flowers</span></div></li>
+          <li><img src="assets/salad.jpg" alt=""><div><b>Chicken salad</b><span>Roast chicken, greens from the garden, nasturtiums and a creamy side</span></div></li>
+        </ul>
+      </div>
+      <div class="panel" role="tabpanel" id="m-cake" aria-labelledby="t-cake" hidden>
+        <ul class="menu-list">
+          <li><img src="assets/carrot-cake.jpg" alt=""><div><b>Carrot cake</b><span>The one our reviews keep mentioning. Thick cream cheese icing</span></div></li>
+          <li><img src="assets/chocolate-cake.jpg" alt=""><div><b>Chocolate layer cake</b><span>Dark, moist and served in a slice big enough to share</span></div></li>
+          <li><img src="assets/cheesecake.jpg" alt=""><div><b>Blueberry cheesecake</b><span>Baked cheesecake on a biscuit base with blueberry compote</span></div></li>
+          <li><img src="assets/high-tea-2.jpg" alt=""><div><b>Garden high tea</b><span>Tiers of scones, cupcakes and savouries for two or more. Book ahead</span></div></li>
+        </ul>
+      </div>
+      <div class="panel" role="tabpanel" id="m-drink" aria-labelledby="t-drink" hidden>
+        <ul class="menu-list">
+          <li><img src="assets/cappuccino.jpg" alt=""><div><b>Cappuccino</b><span>Served in our blue-and-white china with a little iced biscuit</span></div></li>
+          <li><img src="assets/latte.jpg" alt=""><div><b>Café latte</b><span>Or a flat white, americano or espresso. Plant milk on request</span></div></li>
+          <li><img src="assets/hot-choc.jpg" alt=""><div><b>Hot chocolate</b><span>Topped with cream and a biscotti on the side</span></div></li>
+          <li><img src="assets/cupcakes.jpg" alt=""><div><b>Rooibos and herbal teas</b><span>By the pot, with a cupcake if you're feeling generous</span></div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="plates" aria-hidden="true">
+      <div class="plate p1"><img src="assets/caramel-cake.jpg" alt=""></div>
+      <div class="plate p2"><img src="assets/breakfast.jpg" alt=""></div>
+      <div class="plate p3"><img src="assets/carrot-cake.jpg" alt=""></div>
+      <div class="cup"><img src="assets/cappuccino.jpg" alt=""></div>
+      <div class="tag">Homemade cookies<small>A must, say our regulars</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="nursery" id="nursery" aria-labelledby="n-h">
+  <div class="wrap">
+    <div class="pics">
+      <div class="arch"><img src="assets/garden-view.jpg" alt="The nursery garden under a blue Mossel Bay sky" loading="lazy"></div>
+      <div class="arch"><img src="assets/lawn.jpg" alt="Garden lawn with benches and potted plants" loading="lazy"></div>
+    </div>
+    <div>
+      <h2 id="n-h">An indigenous nursery in the middle of town</h2>
+      <p class="lede">We grow plants that love the Garden Route coast: salt wind, summer sun and all. Ask us what will thrive in your garden and we'll walk you to it.</p>
+      <div class="season-head">
+        <div class="tabs" role="tablist" aria-label="Planting seasons" id="seasons">
+          <button role="tab" data-s="spring">Spring</button>
+          <button role="tab" data-s="summer">Summer</button>
+          <button role="tab" data-s="autumn">Autumn</button>
+          <button role="tab" data-s="winter">Winter</button>
+        </div>
+      </div>
+      <ul class="seeds" id="seeds" aria-live="polite"></ul>
+    </div>
+  </div>
+</section>
+
+<section class="pantry" id="pantry" aria-labelledby="p-h">
+  <div class="wrap">
+    <div>
+      <h2 id="p-h">The Farm Shop pantry</h2>
+      <p class="sub">Grains, pulses, seeds and spices sold by weight, beside shelves of homemade preserves, rusks and biscuits. Less packaging, more flavour.</p>
+      <ol class="steps">
+        <li><div><b>Bring a clean jar or bag</b><span>Or buy one of ours at the counter.</span></div></li>
+        <li><div><b>We weigh it empty</b><span>So you only pay for what goes inside.</span></div></li>
+        <li><div><b>Fill up</b><span>Rice, couscous, oats, lentils, nuts and more.</span></div></li>
+        <li><div><b>Pay by weight</b><span>Card or cash, then pick a cookie for the road.</span></div></li>
+      </ol>
+    </div>
+    <div class="jars">
+      <div class="big"><img src="assets/bulk.jpg" alt="Large glass jars of rice and couscous" loading="lazy" style="object-position:50% 60%"></div>
+      <img class="sm" src="assets/preserves.jpg" alt="Homemade rusks and biscuits in a basket" loading="lazy">
+      <img class="sm" src="assets/jars.jpg" alt="Jars of herbs and spices" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="gallery" aria-labelledby="g-h">
+  <div class="wrap">
+    <div class="top">
+      <h2 id="g-h">A morning at Station Street</h2>
+      <a class="btn line" href="https://www.facebook.com/coastalplantscoffeeshop" target="_blank" rel="noopener">More on Facebook</a>
+    </div>
+    <div class="mosaic">
+      <figure class="w2 h2"><img src="assets/porch.jpg" alt="The coffee shop porch with chalkboard menu and red door" loading="lazy"></figure>
+      <figure><img src="assets/cupcakes.jpg" alt="Cupcakes topped with edible violas" loading="lazy"></figure>
+      <figure class="h2"><img src="assets/veranda-2.jpg" alt="Looking down the veranda" loading="lazy"></figure>
+      <figure class="w2"><img src="assets/deck.jpg" alt="A garden table on the wooden deck" loading="lazy"></figure>
+      <figure><img src="assets/choc-slice.jpg" alt="A slice of chocolate cake" loading="lazy"></figure>
+      <figure class="w2"><img src="assets/shopfront.jpg" alt="The coffee shop entrance with menu board" loading="lazy"></figure>
+      <figure><img src="assets/hot-choc.jpg" alt="Hot chocolate in a glass" loading="lazy"></figure>
+      <figure class="w2"><img src="assets/deck-2.jpg" alt="White tables on the covered deck" loading="lazy"></figure>
+      <figure><img src="assets/high-tea.jpg" alt="A high tea spread on a wooden table" loading="lazy"></figure>
+      <figure class="w2"><img src="assets/garden.jpg" alt="The garden courtyard with palms and pots" loading="lazy" style="object-position:50% 40%"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" aria-labelledby="r-h">
+  <div class="wrap">
+    <div class="score">
+      <b>4.8</b>
+      <div class="stars" aria-label="4.8 out of 5 stars">
+        <svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg>
+      </div>
+      <h2 id="r-h" style="font-size:1.6rem;margin:.75rem 0 .5rem">Loved on Google</h2>
+      <p>From 160 Google reviews, with 4.6 on TripAdvisor and 4.8 on Facebook.</p>
+    </div>
+    <div class="quotes">
+      <blockquote class="quote"><p>“Beautiful environment with tables inside and also outside in the garden. The homemade cookies are also a must to buy.”</p><cite>Alrie Enslin, Google</cite></blockquote>
+      <blockquote class="quote"><p>“Beautiful gardens and a kid-friendly environment!”</p><cite>Mari Van Deventer, Google</cite></blockquote>
+      <blockquote class="quote"><p>“Very peaceful and good service.”</p><cite>Niek Brink, Google</cite></blockquote>
+      <div class="quote"><p>Mentioned again and again: the carrot cake, the garden tables and the indigenous plants.</p><cite>What reviewers talk about most</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit" aria-labelledby="v-h">
+  <div class="wrap">
+    <div>
+      <h2 id="v-h">Come through the garden gate</h2>
+      <p class="lede">7 Station Street, on the corner of Adam Street, Mossel Bay. A short walk up from the harbour, with parking right outside.</p>
+      <table class="hours" id="hours">
+        <caption style="text-align:left;font-family:var(--serif);font-size:1.4rem;color:var(--leaf-deep);padding-bottom:.25rem">Opening hours</caption>
+        <tr data-d="1"><th>Monday</th><td>8:30 to 16:00</td></tr>
+        <tr data-d="2"><th>Tuesday</th><td>8:30 to 16:00</td></tr>
+        <tr data-d="3"><th>Wednesday</th><td>8:30 to 16:00</td></tr>
+        <tr data-d="4"><th>Thursday</th><td>8:30 to 16:00</td></tr>
+        <tr data-d="5"><th>Friday</th><td>8:30 to 16:00</td></tr>
+        <tr data-d="6"><th>Saturday</th><td>9:00 to 13:00</td></tr>
+        <tr data-d="0"><th>Sunday</th><td>Closed</td></tr>
+      </table>
+      <div class="contact">
+        <span>Call <a href="tel:+27446903899">044 690 3899</a></span>
+        <span>Email <a href="mailto:coastalplantsnursery@gmail.com">coastalplantsnursery@gmail.com</a></span>
+      </div>
+      <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+        <a class="btn" href="https://maps.google.com/?q=7+Station+Street,+Mossel+Bay" target="_blank" rel="noopener">Get directions</a>
+        <a class="btn line" href="mailto:coastalplantsnursery@gmail.com?subject=High%20tea%20booking">Book a high tea</a>
+      </div>
+    </div>
+    <div class="mapbox">
+      <iframe title="Map showing 7 Station Street, Mossel Bay" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=7%20Station%20Street%2C%20Mossel%20Bay&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg aria-hidden="true"><use href="#logo"/></svg><div><b>Coastal Plants</b><span>Nursery &amp; Coffee Shop · The Farm Shop Kitchen</span></div></a>
+    <nav aria-label="Footer"><a href="#kitchen">Coffee shop</a><a href="#nursery">Nursery</a><a href="#pantry">Farm shop</a><a href="#visit">Visit</a><a href="https://www.facebook.com/coastalplantscoffeeshop" target="_blank" rel="noopener">Facebook</a></nav>
+    <small>© <span id="yr">2026</span> Coastal Plants Nursery &amp; Coffee Shop, 7 Station Street, Mossel Bay</small>
+  </div>
+</footer>
+
+<script>
+// Open / closed status + today's row
+(function(){
+  const hrs={0:null,1:[8.5,16],2:[8.5,16],3:[8.5,16],4:[8.5,16],5:[8.5,16],6:[9,13]};
+  const n=new Date(),d=n.getDay(),t=n.getHours()+n.getMinutes()/60,h=hrs[d];
+  const st=document.getElementById('status'),lbl=st.querySelector('span');
+  const fmt=x=>{const H=Math.floor(x),M=Math.round((x-H)*60);return H+':'+String(M).padStart(2,'0')};
+  if(h&&t>=h[0]&&t<h[1]){lbl.textContent='Open until '+fmt(h[1])}
+  else{st.classList.add('closed');
+    let k=1;while(!hrs[(d+k)%7])k++;
+    const nd=hrs[(d+k)%7];const name=k===1?'tomorrow':['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][(d+k)%7];
+    if(h&&t<h[0])lbl.textContent='Opens today at '+fmt(h[0]);else lbl.textContent='Opens '+name+' at '+fmt(nd[0]);}
+  const row=document.querySelector('#hours tr[data-d="'+d+'"]');if(row)row.classList.add('today');
+  document.getElementById('yr').textContent=n.getFullYear();
+})();
+
+// Menu tabs
+(function(){
+  const tabs=[...document.querySelectorAll('#kitchen [role=tab]')];
+  function sel(tab){tabs.forEach(t=>{const on=t===tab;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!on});}
+  tabs.forEach((t,i)=>{t.addEventListener('click',()=>sel(t));t.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length];sel(n);n.focus();}})});
+})();
+
+// Planting seasons (southern hemisphere)
+(function(){
+  const icon={leaf:'leaf',flower:'flower',succ:'succ',sprout:'sprout'};
+  const data={
+    spring:[['Strelitzia','Bird of paradise. Loves full sun and a deep drink once a week.','flower','Coastal classic'],['Spekboom','Waterwise, wind-proof and almost impossible to kill.','succ','Plant all year'],['Basil and tomato seedlings','Edible garden starters for summer salads.','sprout','Edible'],['Plumbago','Sky-blue flowers that bring the butterflies.','flower','Fast hedge']],
+    summer:[['Agapanthus','Blue and white blooms that shrug off salt wind.','flower','Indigenous'],['Aloe','Statement succulents for dry, sunny corners.','succ','Waterwise'],['Pelargonium','Our local geranium. Flowers for months.','flower','Pots and beds'],['Herb seedlings','Rosemary, thyme and mint for the kitchen windowsill.','sprout','Edible']],
+    autumn:[['Wild rosemary','Silver-grey fynbos shrub with a lovely scent.','leaf','Fynbos'],['Spinach and kale','Plant now for winter greens all season.','sprout','Edible'],['Vygies','Carpets of colour on sandy, coastal soil.','succ','Ground cover'],['Restios','Graceful reeds that move beautifully in the wind.','leaf','Fynbos']],
+    winter:[['Lavender','Plant now and it will be in full flower by spring.','flower','Our winter pick'],['Pincushion','Leucospermum. Showy fynbos flowers that birds love.','flower','Fynbos'],['Peas and broad beans','Cool-season edibles for the veggie patch.','sprout','Edible'],['Spekboom','Still the easiest win in a Mossel Bay garden.','succ','Plant all year']]
+  };
+  const btns=[...document.querySelectorAll('#seasons button')],list=document.getElementById('seeds');
+  function show(s){btns.forEach(b=>{const on=b.dataset.s===s;b.setAttribute('aria-selected',on)});
+    list.innerHTML=data[s].map(([n,dsc,ic,note])=>`<li class="seed"><svg aria-hidden="true"><use href="#${icon[ic]}"/></svg><b>${n}</b><span>${dsc}</span><i>${note}</i></li>`).join('');}
+  btns.forEach(b=>b.addEventListener('click',()=>show(b.dataset.s)));
+  const m=new Date().getMonth();show([8,9,10].includes(m)?'spring':[11,0,1].includes(m)?'summer':[2,3,4].includes(m)?'autumn':'winter');
+})();
+</script>
+<script src="verto-badge.js" data-client="Coastal Plants" defer></script>
+</body>
+</html>
